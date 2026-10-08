@@ -38,7 +38,7 @@ class Npm extends Repo
                 $uid,
                 $this->makeArg($name, $p->links->npm, "{$p->name}: {$p->version}"),
                 $name,
-                $description,
+                $description === '' ? $p->version : "{$p->version} · {$description}",
                 "icon-cache/{$this->id}.png"
             );
 
