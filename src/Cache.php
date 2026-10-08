@@ -10,7 +10,7 @@ class Cache
     public $w;
     private $queries = [];
 
-    public $cache_age = 14;
+    public $cache_age = 1;
     public $dbs = [
         "alcatraz" => "https://raw.githubusercontent.com/mneorr/alcatraz-packages/master/packages.json",
         "apple" => "http://cocoadocs.org/apple_documents.jsonp", // CocoaDocs
