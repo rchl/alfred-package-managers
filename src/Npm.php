@@ -10,7 +10,7 @@ class Npm extends Repo
 {
     protected $id         = 'npm';
     protected $url        = 'https://npmjs.com';
-    protected $search_url = 'https://api.npms.io/v2/search?q=';
+    protected $search_url = 'https://registry.npmjs.org/-/v1/search?text=';
 
     public function search($query)
     {
@@ -25,7 +25,7 @@ class Npm extends Repo
             "{$this->search_url}{$query}&size={$this->max_return}"
         );
 
-        foreach ($this->pkgs->results as $pkg) {
+        foreach ($this->pkgs->objects as $pkg) {
             $p    = $pkg->package;
             $name = $p->name;
             $uid  = "{$this->id}-{$name}-{$p->version}";
